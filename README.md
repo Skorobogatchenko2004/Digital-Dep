@@ -17,4 +17,36 @@ python credit_scoring.py
 
 Можно передать собственный CSV и путь для результатов: `python credit_scoring.py --data path/to/data.csv --output results/metrics.csv`.
 
+## Запуск в Google Colab
+
+Создайте новый notebook в Google Colab и выполните ячейки по порядку. Репозиторий должен быть доступен для клонирования.
+
+1. Склонируйте проект и перейдите в его папку:
+
+```python
+!git clone https://github.com/Skorobogatchenko2004/Digital-Dep.git
+%cd Digital-Dep
+```
+
+2. Установите зависимости:
+
+```python
+!pip install -r requirements.txt
+```
+
+3. Обучите модели и выведите метрики:
+
+```python
+!python credit_scoring.py
+```
+
+Датасет уже находится в репозитории, поэтому загружать его отдельно не нужно. Результаты сохранятся в `model_metrics.csv`.
+
+4. При необходимости скачайте таблицу метрик на свой компьютер:
+
+```python
+from google.colab import files
+files.download("model_metrics.csv")
+```
+
 Результаты предназначены для учебного эксперимента и не должны использоваться для реальных решений о выдаче кредита без отдельной проверки качества, справедливости и соответствия требованиям регулирования.
